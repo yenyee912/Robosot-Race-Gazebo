@@ -38,20 +38,6 @@
     <arg name="y_pos" value="0.5"/>
   </include>
 
-  <!--include file="$(find test_gazebo)/launch/ball.launch">
-    <arg name="name" value="ball2_clone"/>
-    <arg name="colour" value="red"/>
-    <arg name="x_pos" value="1.5"/>
-    <arg name="y_pos" value="-0.5"/>
-  </include-->
-  
-  <!--include file="$(find test_gazebo)/launch/ball.launch">
-    <arg name="name" value="ball4_clone"/>
-    <arg name="colour" value="red"/>
-    <arg name="x_pos" value="1.5"/>
-    <arg name="y_pos" value="0.15"/>
-  </include-->
-
   <include file="$(find test_gazebo)/launch/ball.launch">
     <arg name="name" value="ball4"/>
     <arg name="colour" value="blue"/>
