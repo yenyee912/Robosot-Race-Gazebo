@@ -1,0 +1,21 @@
+<!-- launch XML #
+1. doc="description for this arg" (optional)
+2. <arg> tag ==> create more re-usable and configurable launch files by specifying values that are passed via the command-line, passing in via an <include>, or declared for higher-level files. 
+Args are not global. 
+An arg declaration is specific to a single launch file, much like a local parameter in a method. You must explicitly pass arg values to an included file, much like you would in a method call -->
+
+<launch>
+  <!-- Spawn ball -->
+  <arg name="colour" default="red" doc="ball colour [red, blue, yellow]"/>
+  <arg name="x_pos" default="0.0"/>
+  <arg name="y_pos" default="0.0"/>
+  <arg name="name" default="ball"/>
+	
+
+  <!-- Spawn ball -->
+  <node name="spawn_$(arg name)" 
+	pkg="gazebo_ros" 
+	type="spawn_model" 
+	args="-file $(find test_gazebo)/model/ball/$(arg colour)/model.sdf -sdf -x $(arg x_pos) -y $(arg y_pos) -z 0.1 -model $(arg name)" />
+
+</launch>

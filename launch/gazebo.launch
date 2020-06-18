@@ -1,0 +1,105 @@
+<!--This launch file will include ball.launch for EVERY BALL; 
+and empty world, -->
+<launch>
+  <arg name="model" default="$(env TURTLEBOT3_MODEL)" doc="model type [burger, waffle, waffle_pi]"/>
+  <arg name="x_pos" default="0.0"/>
+  <arg name="y_pos" default="0.0"/>
+  <arg name="z_pos" default="0.0"/>
+
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name" value="$(find test_gazebo)/worlds/robosot_race.world"/>
+    <arg name="paused" value="false"/>
+    <arg name="use_sim_time" value="true"/>
+    <arg name="gui" value="true"/>
+    <arg name="headless" value="false"/>
+    <arg name="debug" value="false"/>
+  </include>
+
+  <param name="robot_description" command="$(find xacro)/xacro --inorder $(find test_gazebo)/model/turtlebot3_burger_for_robosot.urdf.xacro" />  
+  <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-urdf -model turtlebot3 -x $(arg x_pos) -y $(arg y_pos) -z $(arg z_pos) -param robot_description" />
+
+  <!-- Spawn balls -->
+  <include file="$(find test_gazebo)/launch/ball.launch">
+    <arg name="name" value="blue1"/>
+    <arg name="colour" value="blue"/>
+    <arg name="x_pos" value="1.0"/>
+    <arg name="y_pos" value="0.0"/>
+  </include>
+
+<include file="$(find test_gazebo)/launch/ball.launch">
+    <arg name="name" value="blue2"/>
+    <arg name="colour" value="blue"/>
+    <arg name="x_pos" value="1.0"/>
+    <arg name="y_pos" value="-1.0"/>
+  </include>
+
+  <include file="$(find test_gazebo)/launch/ball.launch">
+    <arg name="name" value="blue3"/>
+    <arg name="colour" value="blue"/>
+    <arg name="x_pos" value="0.7"/>
+    <arg name="y_pos" value="1.0"/>
+  </include>
+
+ <include file="$(find test_gazebo)/launch/ball.launch">
+    <arg name="name" value="blue4"/>
+    <arg name="colour" value="blue"/>
+    <arg name="x_pos" value="0.7"/>
+    <arg name="y_pos" value="-0.5"/>
+  </include>
+  
+  <include file="$(find test_gazebo)/launch/ball.launch">
+    <arg name="name" value="yellow1"/>
+    <arg name="colour" value="yellow"/>
+    <arg name="x_pos" value="1.5"/>
+    <arg name="y_pos" value="-0.5"/>
+  </include>
+
+ <include file="$(find test_gazebo)/launch/ball.launch">
+    <arg name="name" value="yellow2"/>
+    <arg name="colour" value="yellow"/>
+    <arg name="x_pos" value="1.0"/>
+    <arg name="y_pos" value="0.5"/>
+  </include>
+
+<include file="$(find test_gazebo)/launch/ball.launch">
+    <arg name="name" value="yellow3"/>
+    <arg name="colour" value="yellow"/>
+    <arg name="x_pos" value="0.3"/>
+    <arg name="y_pos" value="-1.0"/>
+  </include>
+
+<include file="$(find test_gazebo)/launch/ball.launch">
+    <arg name="name" value="ball4"/>
+    <arg name="colour" value="yellow"/>
+    <arg name="x_pos" value="0.5"/>
+    <arg name="y_pos" value="0.7"/>
+  </include>
+
+  <include file="$(find test_gazebo)/launch/ball.launch">
+    <arg name="name" value="red1"/>
+    <arg name="colour" value="red"/>
+    <arg name="x_pos" value="1.0"/>
+    <arg name="y_pos" value="-0.5"/>
+  </include>
+
+ <include file="$(find test_gazebo)/launch/ball.launch">
+    <arg name="name" value="red2"/>
+    <arg name="colour" value="red"/>
+    <arg name="x_pos" value="1.5"/>
+    <arg name="y_pos" value="0.5"/>
+  </include>
+
+ <include file="$(find test_gazebo)/launch/ball.launch">
+    <arg name="name" value="red4"/>
+    <arg name="colour" value="red"/>
+    <arg name="x_pos" value="1.3"/>
+    <arg name="y_pos" value="-1.0"/>
+  </include>
+
+ <include file="$(find test_gazebo)/launch/ball.launch">
+    <arg name="name" value="red3"/>
+    <arg name="colour" value="red"/>
+    <arg name="x_pos" value="0.7"/>
+    <arg name="y_pos" value="0.5"/>
+  </include>
+</launch>
