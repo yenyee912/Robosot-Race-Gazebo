@@ -13,6 +13,7 @@ http://gazebosim.org/
 
 To use this simulation wolrd, launch:<br />
  $ roslaunch robosot_race_gazebo robosot_gazebo.launch
- Please refer https://github.com/yenyee912/Sistem-Robosot-Race for further operation. <br />
+ 
+Please refer https://github.com/yenyee912/Sistem-Robosot-Race for further operation. <br />
 
 
