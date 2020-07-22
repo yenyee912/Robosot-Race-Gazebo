@@ -3,7 +3,7 @@ A Gazebo playing field for the FIRA Robosot Race. <br />
 This is a ROS package which contains files to render the Gazebo model of robot, balls, goals and field. <br />
  **Noticed that "test_gazebo" is the package name.**
 
-Content in folder: 
+Contents in folders: 
 - worlds: field model
 - model: ball models
 - launch : robosot_gazebo.launch, there is comment for each of the elements in this file. 
